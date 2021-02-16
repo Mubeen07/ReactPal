@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
 });
 
+// Class Component
 class Splash extends Component {
   componentDidMount() {
     const { navigation } = this.props;
