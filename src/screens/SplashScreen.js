@@ -2,16 +2,10 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  stretch: {
-    resizeMode: 'cover',
-    width: 240,
-    height: 125,
-    marginTop: 180,
-  },
   container: {
-    flex: 1.5,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+    flex: 1,
+    height: 200,
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });
@@ -26,13 +20,10 @@ class Splash extends Component {
   }
   render() {
     return (
-      <View
-        style={{
-          backgroundColor: 'red',
-          flex: 1,
-          height: 200,
-        }}>
-        <Text style={{color: 'black'}}>Engine: Hermes</Text>
+      <View style={styles.container}>
+        <Text style={{color: 'black', fontSize: 18}}>
+          Welcome to react native boilerplate
+        </Text>
       </View>
     );
   }
