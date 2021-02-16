@@ -1,0 +1,4 @@
+export const accountTypes = {
+  EMAIL_ONCHANGE: 'EMAIL_ONCHANGE',
+  FIELD_ONCHANGE: 'FIELD_ONCHANGE'
+};

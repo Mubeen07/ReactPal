@@ -1,0 +1,17 @@
+export const Colors = {
+    backgroundColor: '#00B983',
+    orange: '#F99E23',
+    white: '#ffffff',
+    black: '#000000',
+    gray: '#A8A9AA',
+    lightGray: '#ADB5BD',
+    brightGray: '#3A404C',
+    labelGray: '#868E96',
+    labelColor: '#808285',
+    blue: '#004d76',
+    transparent: 'transparent',
+    buttonColor: '#485363',
+    tabSelected: '#720000',
+    statusBarColor: '#143f26',
+    inputBgColor: 'rgba(62, 86, 72, 0.6)',
+};
