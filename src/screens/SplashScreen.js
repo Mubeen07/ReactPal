@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {ScreenContainer} from '../components';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,11 +21,13 @@ class Splash extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={{color: 'black', fontSize: 18}}>
-          Welcome to react native boilerplate
-        </Text>
-      </View>
+      <ScreenContainer>
+        <View style={styles.container}>
+          <Text style={{color: 'black', fontSize: 18}}>
+            Welcome to react native boilerplate
+          </Text>
+        </View>
+      </ScreenContainer>
     );
   }
 }
