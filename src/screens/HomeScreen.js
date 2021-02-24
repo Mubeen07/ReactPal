@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, ScrollView, View, Text, Image} from 'react-native';
+import {StyleSheet, ScrollView, View, Text} from 'react-native';
 import {
   Header,
   LearnMoreLinks,
@@ -7,9 +7,11 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import {ScreenContainer} from '../components';
-import {SvgIcons} from '../../resources/icons';
-import Images from '../../resources/images';
+import {
+  ScreenContainer,
+  RoundProfileImage,
+  SocialPlatforms,
+} from '../components';
 
 const styles = StyleSheet.create({
   stretch: {
@@ -63,70 +65,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const profilestyles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    zIndex: 1,
-    backgroundColor: 'transparent',
-    position: 'absolute',
-    top: 150,
-    flex: 1,
-    left: 25,
-  },
-  image: {
-    resizeMode: 'cover',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    borderWidth: 2,
-    borderColor: 'white',
-  },
-});
-
-const socialmediastyles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    backgroundColor: Colors.white,
-  },
-  icon: {
-    resizeMode: 'contain',
-    width: 18,
-    height: 18,
-  },
-});
-
-const RoundProfileImage = ({imageSource, imageOpacity}) =>
-  imageSource && (
-    <View
-      style={{
-        ...profilestyles.container,
-        opacity: imageOpacity,
-      }}>
-      <Image style={profilestyles.image} source={Images.PROFILE_IMAGE} />
-    </View>
-  );
-
-const SocialPlatforms = ({SvgIcons}) => {
-  const {EmailIcon, LinkedInIcon, TwitterIcon, FBIcon} = SvgIcons;
-  return (
-    <View style={socialmediastyles.container}>
-      <View
-        style={{
-          flexDirection: 'row',
-          flex: 0.3,
-          justifyContent: 'space-evenly',
-        }}>
-        <Image style={socialmediastyles.icon} source={FBIcon} />
-        <Image style={socialmediastyles.icon} source={LinkedInIcon} />
-        <Image style={socialmediastyles.icon} source={TwitterIcon} />
-        <Image style={socialmediastyles.icon} source={EmailIcon} />
-      </View>
-    </View>
-  );
-};
-
 const HomeScreen = ({navigation}) => {
   const [imageOpacity, setImageOpacity] = useState(1);
   return (
@@ -142,7 +80,7 @@ const HomeScreen = ({navigation}) => {
             Software Engineer
           </Text>
         </View>
-        <SocialPlatforms SvgIcons={SvgIcons} />
+        <SocialPlatforms />
       </View>
       <RoundProfileImage imageSource={true} imageOpacity={imageOpacity} />
       <ScrollView
