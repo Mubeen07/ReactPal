@@ -8,6 +8,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import {ScreenContainer} from '../components';
+import {SvgIcons} from '../../resources/icons';
 import Images from '../../resources/images';
 
 const styles = StyleSheet.create({
@@ -28,10 +29,8 @@ const styles = StyleSheet.create({
   },
   centerAlign: {
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.white,
-    paddingVertical: 10,
   },
   body: {
     backgroundColor: Colors.white,
@@ -85,6 +84,19 @@ const profilestyles = StyleSheet.create({
   },
 });
 
+const socialmediastyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: Colors.white,
+  },
+  icon: {
+    resizeMode: 'contain',
+    width: 18,
+    height: 18,
+  },
+});
+
 const RoundProfileImage = ({imageSource, imageOpacity}) =>
   imageSource && (
     <View
@@ -96,20 +108,41 @@ const RoundProfileImage = ({imageSource, imageOpacity}) =>
     </View>
   );
 
+const SocialPlatforms = ({SvgIcons}) => {
+  const {EmailIcon, LinkedInIcon, TwitterIcon, FBIcon} = SvgIcons;
+  return (
+    <View style={socialmediastyles.container}>
+      <View
+        style={{
+          flexDirection: 'row',
+          flex: 0.3,
+          justifyContent: 'space-evenly',
+        }}>
+        <Image style={socialmediastyles.icon} source={FBIcon} />
+        <Image style={socialmediastyles.icon} source={LinkedInIcon} />
+        <Image style={socialmediastyles.icon} source={TwitterIcon} />
+        <Image style={socialmediastyles.icon} source={EmailIcon} />
+      </View>
+    </View>
+  );
+};
+
 const HomeScreen = ({navigation}) => {
   const [imageOpacity, setImageOpacity] = useState(1);
   return (
     <ScreenContainer>
       <Header />
-      <View style={styles.centerAlign}>
-        <Text style={{fontSize: 20, fontWeight: 'bold', left: 20, top: 5}}>
-          Mubeen Ahmed
-        </Text>
-        <Text
-          style={{fontSize: 14, fontStyle: 'italic', left: 5, color: 'grey'}}>
-          Software Engineer
-        </Text>
-        <View style={{backgroundColor: 'red'}}></View>
+      <View>
+        <View style={styles.centerAlign}>
+          <Text style={{fontSize: 20, fontWeight: 'bold', left: 20, top: 5}}>
+            Mubeen Ahmed
+          </Text>
+          <Text
+            style={{fontSize: 14, fontStyle: 'italic', left: 5, color: 'grey'}}>
+            Software Engineer
+          </Text>
+        </View>
+        <SocialPlatforms SvgIcons={SvgIcons} />
       </View>
       <RoundProfileImage imageSource={true} imageOpacity={imageOpacity} />
       <ScrollView
