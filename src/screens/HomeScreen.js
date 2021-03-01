@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, ScrollView, View, Text, Image} from 'react-native';
+import {StyleSheet, ScrollView, View, Text} from 'react-native';
 import {
   Header,
   LearnMoreLinks,
@@ -7,8 +7,11 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import {ScreenContainer} from '../components';
-import Images from '../../resources/images';
+import {
+  ScreenContainer,
+  RoundProfileImage,
+  SocialPlatforms,
+} from '../components';
 
 const styles = StyleSheet.create({
   stretch: {
@@ -28,10 +31,8 @@ const styles = StyleSheet.create({
   },
   centerAlign: {
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.white,
-    paddingVertical: 10,
   },
   body: {
     backgroundColor: Colors.white,
@@ -64,52 +65,22 @@ const styles = StyleSheet.create({
   },
 });
 
-const profilestyles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    zIndex: 1,
-    backgroundColor: 'transparent',
-    position: 'absolute',
-    top: 150,
-    flex: 1,
-    left: 25,
-  },
-  image: {
-    resizeMode: 'cover',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    borderWidth: 2,
-    borderColor: 'white',
-  },
-});
-
-const RoundProfileImage = ({imageSource, imageOpacity}) =>
-  imageSource && (
-    <View
-      style={{
-        ...profilestyles.container,
-        opacity: imageOpacity,
-      }}>
-      <Image style={profilestyles.image} source={Images.PROFILE_IMAGE} />
-    </View>
-  );
-
 const HomeScreen = ({navigation}) => {
   const [imageOpacity, setImageOpacity] = useState(1);
   return (
     <ScreenContainer>
       <Header />
-      <View style={styles.centerAlign}>
-        <Text style={{fontSize: 20, fontWeight: 'bold', left: 20, top: 5}}>
-          Mubeen Ahmed
-        </Text>
-        <Text
-          style={{fontSize: 14, fontStyle: 'italic', left: 5, color: 'grey'}}>
-          Software Engineer
-        </Text>
-        <View style={{backgroundColor: 'red'}}></View>
+      <View>
+        <View style={styles.centerAlign}>
+          <Text style={{fontSize: 20, fontWeight: 'bold', left: 20, top: 5}}>
+            Mubeen Ahmed
+          </Text>
+          <Text
+            style={{fontSize: 14, fontStyle: 'italic', left: 5, color: 'grey'}}>
+            Software Engineer
+          </Text>
+        </View>
+        <SocialPlatforms />
       </View>
       <RoundProfileImage imageSource={true} imageOpacity={imageOpacity} />
       <ScrollView
