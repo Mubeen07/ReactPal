@@ -11,6 +11,7 @@ import {
   ScreenContainer,
   RoundProfileImage,
   SocialPlatforms,
+  TechTags,
 } from '../components';
 
 const styles = StyleSheet.create({
@@ -70,7 +71,20 @@ const HomeScreen = ({navigation}) => {
   return (
     <ScreenContainer>
       <Header />
-      <View>
+      <View
+        style={{
+          backgroundColor: Colors.white,
+          flexDirection: 'column',
+          paddingBottom: 10,
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 1,
+          },
+          shadowOpacity: 0.22,
+          shadowRadius: 2.22,
+          elevation: 3,
+        }}>
         <View style={styles.centerAlign}>
           <Text style={{fontSize: 20, fontWeight: 'bold', left: 20, top: 5}}>
             Mubeen Ahmed
@@ -80,9 +94,10 @@ const HomeScreen = ({navigation}) => {
             Software Engineer
           </Text>
         </View>
+        <RoundProfileImage imageSource={true} imageOpacity={imageOpacity} />
         <SocialPlatforms />
+        <TechTags />
       </View>
-      <RoundProfileImage imageSource={true} imageOpacity={imageOpacity} />
       <ScrollView
         onScroll={(e) => {
           setImageOpacity((100 - e.nativeEvent.contentOffset.y) / 100);
