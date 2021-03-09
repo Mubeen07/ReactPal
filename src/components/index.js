@@ -4,3 +4,5 @@ export {Header} from './Header';
 export {RoundProfileImage} from './RoundProfileImage';
 export {SocialPlatforms} from './SocialMediaIcons';
 export {TechTags} from './TechTags';
+export {WorkExperinceCard} from './WorkExperinceCard';
+export {Weather} from './Weather';

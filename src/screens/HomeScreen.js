@@ -12,6 +12,7 @@ import {
   RoundProfileImage,
   SocialPlatforms,
   TechTags,
+  WorkExperinceCard,
 } from '../components';
 
 const styles = StyleSheet.create({
@@ -117,6 +118,9 @@ const HomeScreen = ({navigation}) => {
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
             <View style={styles.body}>
+              <View style={{paddingHorizontal: 20}}>
+                <WorkExperinceCard />
+              </View>
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>Step One</Text>
                 <Text style={styles.sectionDescription}>
