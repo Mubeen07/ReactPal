@@ -62,7 +62,7 @@ class Splash extends Component {
     fetchWeather().then((res) => {
       setTimeout(() => {
         navigation.navigate('Home');
-      }, 11000);
+      }, 9000);
       this.setState({WeatherDetail: res, isLoading: false});
     });
   }
