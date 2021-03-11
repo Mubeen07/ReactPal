@@ -1,8 +1,14 @@
 import React from 'react';
 import {Text} from 'react-native';
+import {NormalText} from './NormalText';
 
 const BoldText = ({text}) => (
-  <Text style={{fontSize: 20, fontWeight: 'bold'}}>{text}</Text>
+  <NormalText
+    text={text}
+    style={{
+      fontWeight: 'bold',
+    }}
+  />
 );
 
 export {BoldText};

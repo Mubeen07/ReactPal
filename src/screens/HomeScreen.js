@@ -14,6 +14,7 @@ import {
   TechTags,
   WorkExperinceCard,
 } from '../components';
+import {ItalicText} from '../components/common';
 
 const styles = StyleSheet.create({
   stretch: {
@@ -87,15 +88,7 @@ const HomeProfile = ({ImageOpacity}) => (
       <Text style={{fontSize: 20, fontWeight: 'bold', left: 20, top: 5}}>
         Mubeen Ahmed
       </Text>
-      <Text
-        style={{
-          fontSize: 14,
-          fontStyle: 'italic',
-          left: 5,
-          color: 'grey',
-        }}>
-        Software Engineer
-      </Text>
+      <ItalicText text={'Software Engineer'} left={4} />
     </View>
     <RoundProfileImage ImageSource={true} ImageOpacity={ImageOpacity} />
     <SocialPlatforms />

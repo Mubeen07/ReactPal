@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {Badge} from 'native-base';
-
 import {BoldText} from './common/BoldText';
 
 const styles = StyleSheet.create({
