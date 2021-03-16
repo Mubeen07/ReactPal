@@ -13,6 +13,7 @@ import {
   SocialPlatforms,
   TechTags,
   WorkExperinceCard,
+  Swiper,
 } from '../components';
 import {ItalicText} from '../components/common';
 
@@ -112,6 +113,7 @@ const HomeScreen = ({navigation}) => {
             style={styles.scrollView}>
             <View style={styles.body}>
               <View style={{paddingHorizontal: 20}}>
+                <Swiper />
                 <WorkExperinceCard />
               </View>
               <View style={styles.sectionContainer}>

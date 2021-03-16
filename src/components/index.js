@@ -6,3 +6,4 @@ export {SocialPlatforms} from './SocialMediaIcons';
 export {TechTags} from './TechTags';
 export {WorkExperinceCard} from './WorkExperinceCard';
 export {Weather} from './Weather';
+export {Swiper} from './SwiperFlatList';
